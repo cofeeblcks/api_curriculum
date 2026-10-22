@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileResource extends JsonResource
 {
@@ -22,7 +23,8 @@ class ProfileResource extends JsonResource
             'specialty' => $this->specialty,
             'location' => $this->location,
             'available' => $this->available,
-            'avatar' => $this->avatar_path,
+            'logoUrl' => $this->logo_path ? url(Storage::url($this->logo_path)) : null,
+            'avatarUrl' => $this->avatar_path ? url(Storage::url($this->avatar_path)) : null,
             'publicEmail' => $this->public_email,
             'phones' => $this->phones ?? [],
             'socials' => $this->socials ?? [],

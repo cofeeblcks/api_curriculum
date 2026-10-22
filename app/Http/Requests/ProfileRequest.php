@@ -17,7 +17,6 @@ class ProfileRequest extends FormRequest
             'specialty' => ['nullable', 'string', 'max:255'],
             'location' => ['nullable', 'string', 'max:255'],
             'available' => ['nullable', 'boolean'],
-            'avatarPath' => ['nullable', 'string', 'max:500'],
             'publicEmail' => ['nullable', 'email', 'max:255'],
             'phones' => ['nullable', 'array'],
             'phones.*' => ['string', 'max:50'],
